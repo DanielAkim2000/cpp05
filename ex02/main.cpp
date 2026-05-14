@@ -17,10 +17,10 @@ int main()
 	RobotomyRequestForm robo("marvin");
 	PresidentialPardonForm pardon("arthur");
 
-	std::cout << "-- Execute without signing" << std::endl;
+	std::cout << "#Execute without signing" << std::endl;
 	intern.executeForm(shrub);
 
-	std::cout << "\n-- Sign with low grade" << std::endl;
+	std::cout << "\n#Sign with low grade" << std::endl;
 	try
 	{
 		shrub.beSigned(intern);
@@ -30,7 +30,7 @@ int main()
 		std::cout << "Intern couldn't sign shrubbery because " << e.what() << std::endl;
 	}
 
-	std::cout << "\n-- Sign and execute with boss" << std::endl;
+	std::cout << "\n#Sign and execute with boss" << std::endl;
 	shrub.beSigned(boss);
 	robo.beSigned(boss);
 	pardon.beSigned(boss);
@@ -39,7 +39,7 @@ int main()
 	boss.executeForm(robo);
 	boss.executeForm(pardon);
 
-	std::cout << "\n-- Execute with low grade" << std::endl;
+	std::cout << "\n#Execute with low grade" << std::endl;
 	intern.executeForm(pardon);
 
 	return 0;
